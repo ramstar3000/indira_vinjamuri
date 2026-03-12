@@ -1,19 +1,33 @@
 ---
 const awards = [
   {
-    title: 'Award Title Here',
-    year: '20XX',
-    description: 'Description of the award and its significance.',
+    title: 'Cochrane Systematic Review — Co-author',
+    year: '2013',
+    description: 'Co-authored the Cochrane systematic review "Training to recognise the early signs of recurrence in schizophrenia" (Morriss R, Vinjamuri I, Faizal MA, Bolton CA, McCarthy JP). Published in the Cochrane Database of Systematic Reviews, this influential review examined early warning signs interventions for preventing psychotic relapse.',
+    link: 'https://pubmed.ncbi.nlm.nih.gov/23450559/',
   },
   {
-    title: 'Award Title Here',
-    year: '20XX',
-    description: 'Description of the award and its significance.',
+    title: 'Appointed Chair — General Adult Specialist Advisory Committee (GA-SAC)',
+    year: '2019',
+    description: 'Elected Chair of the General Adult Specialist Advisory Committee at the Royal College of Psychiatrists, leading national-level policy on training standards and curriculum for general adult psychiatry across the UK.',
+    // Note: Year approximate — verify exact appointment date
   },
   {
-    title: 'Award Title Here',
-    year: '20XX',
-    description: 'Description of the award and its significance.',
+    title: 'NHS England Education Quality Review — Commendation',
+    year: '2023',
+    description: 'The NHS England education quality review of Mersey Care NHS Foundation Trust praised the Director of Medical Education as "very visible, approachable and responsive", reflecting the high-quality training environment fostered under Dr Vinjamuri\'s leadership.',
+    link: 'https://www.england.nhs.uk/long-read/education-quality-review-mersey-care-nhs-foundation-trust/',
+  },
+  {
+    title: 'Appointed Associate Dean — Royal College of Psychiatrists',
+    year: '2024',
+    description: 'Appointed Associate Dean for Curricula and Assessment at the Royal College of Psychiatrists, overseeing the development and quality assurance of psychiatric training programmes nationally.',
+    // Note: Year approximate — verify exact appointment date
+  },
+  {
+    title: 'Invited Speaker — RCPsych National Conference',
+    year: '2025',
+    description: 'Invited to present on "Curricula and Assessments" at the Royal College of Psychiatrists\' Clinical and Educational Supervisors Conference, sharing expertise on training standards and assessment frameworks.',
   },
 ];
 ---
@@ -26,7 +40,7 @@ const awards = [
     </div>
 
     <div class="awards-timeline">
-      {awards.map((award, index) => (
+      {awards.map((award) => (
         <div class="award-item">
           <div class="award-marker">
             <div class="award-dot"></div>
@@ -35,20 +49,14 @@ const awards = [
             <span class="award-year">{award.year}</span>
             <h3>{award.title}</h3>
             <p>{award.description}</p>
-            <div class="image-placeholder award-image">
-              <div>
-                <small>Add award image or certificate</small>
-              </div>
-            </div>
+            {award.link && (
+              <a href={award.link} target="_blank" rel="noopener noreferrer" class="award-link">
+                View details &rarr;
+              </a>
+            )}
           </div>
         </div>
       ))}
-    </div>
-
-    <div class="awards-note">
-      <p class="placeholder-note">
-        <em>[Update this section with your awards, honours, and recognitions. Edit the awards array in src/components/Awards.astro to add your entries.]</em>
-      </p>
     </div>
   </div>
 </section>
@@ -115,22 +123,17 @@ const awards = [
     margin-bottom: 0.5rem;
   }
 
-  .award-image {
-    height: 80px;
-    margin-top: 1rem;
-    font-size: 0.85rem;
+  .award-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color var(--transition);
   }
 
-  .awards-note {
-    max-width: 700px;
-    margin: 1rem auto 0;
-  }
-
-  .placeholder-note {
-    background: var(--color-bg-alt);
-    border-left: 3px solid var(--color-accent);
-    padding: 1rem 1.25rem;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    color: var(--color-text-light);
+  .award-link:hover {
+    color: var(--color-accent-light);
   }
 </style>
