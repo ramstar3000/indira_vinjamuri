@@ -1,0 +1,145 @@
+---
+---
+
+<section id="dean">
+  <div class="container">
+    <div class="section-header">
+      <h2>Application for Dean</h2>
+      <p>My vision for academic and clinical leadership</p>
+    </div>
+
+    <div class="dean-content">
+      <div class="dean-statement card">
+        <h3>Statement of Purpose</h3>
+        <p class="placeholder-note">
+          <em>[Write your personal statement here. Describe your vision, goals, and what you hope to achieve as Dean. This section is designed for you to share your manifesto and candidacy.]</em>
+        </p>
+
+        <div class="dean-pillars">
+          <h3>Key Pillars</h3>
+          <div class="grid-2 pillar-grid">
+            <div class="pillar">
+              <h4>Education Excellence</h4>
+              <p><em>[Describe your vision for education standards and training.]</em></p>
+            </div>
+            <div class="pillar">
+              <h4>Research & Innovation</h4>
+              <p><em>[Describe your approach to fostering research and innovation.]</em></p>
+            </div>
+            <div class="pillar">
+              <h4>Diversity & Inclusion</h4>
+              <p><em>[Describe your commitment to diversity and inclusive practices.]</em></p>
+            </div>
+            <div class="pillar">
+              <h4>Workforce Development</h4>
+              <p><em>[Describe your plans for recruitment, retention, and staff development.]</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="dean-sidebar">
+        <div class="card">
+          <h3>Qualifications</h3>
+          <ul class="qualifications-list">
+            <li>Consultant Psychiatrist</li>
+            <li>Director of Medical Education, Mersey Care NHS</li>
+            <li>Associate Dean, RCPsych</li>
+            <li>GA-SAC Chair, RCPsych</li>
+          </ul>
+          <p class="placeholder-note" style="margin-top: 1rem;">
+            <em>[Add your full qualifications, degrees, and memberships here.]</em>
+          </p>
+        </div>
+
+        <div class="card" style="margin-top: 1.5rem;">
+          <div class="image-placeholder" style="height: 200px;">
+            <div>
+              <small>Add a professional photo<br/>or supporting image here</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dean-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .dean-statement h3 {
+    margin-bottom: 1rem;
+  }
+
+  .placeholder-note {
+    background: var(--color-bg-alt);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    color: var(--color-text-light);
+  }
+
+  .dean-pillars {
+    margin-top: 2rem;
+  }
+
+  .pillar-grid {
+    margin-top: 1rem;
+  }
+
+  .pillar {
+    background: var(--color-bg-alt);
+    padding: 1.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+  }
+
+  .pillar h4 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .pillar p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .qualifications-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .qualifications-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .qualifications-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .qualifications-list li:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .dean-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

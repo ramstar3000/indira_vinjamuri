@@ -1,0 +1,21 @@
+{
+  "name": "indira_vinjamuri",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Dr. Indira Vinjamuri",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:46225/git/ramstar3000/indira_vinjamuri"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^6.0.3"
+  }
+}

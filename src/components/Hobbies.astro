@@ -1,0 +1,90 @@
+---
+const hobbies = [
+  {
+    title: 'Hobby 1',
+    description: 'Describe your hobby here and what you enjoy about it.',
+  },
+  {
+    title: 'Hobby 2',
+    description: 'Describe your hobby here and what you enjoy about it.',
+  },
+  {
+    title: 'Hobby 3',
+    description: 'Describe your hobby here and what you enjoy about it.',
+  },
+  {
+    title: 'Hobby 4',
+    description: 'Describe your hobby here and what you enjoy about it.',
+  },
+];
+---
+
+<section id="hobbies">
+  <div class="container">
+    <div class="section-header">
+      <h2>My Hobbies</h2>
+      <p>What I enjoy outside of work</p>
+    </div>
+
+    <div class="grid-2 hobbies-grid">
+      {hobbies.map((hobby) => (
+        <div class="card hobby-card">
+          <div class="image-placeholder hobby-image">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" />
+              </svg>
+              <p>Add hobby photo</p>
+            </div>
+          </div>
+          <h3>{hobby.title}</h3>
+          <p>{hobby.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <p class="placeholder-note">
+        <em>[Update the hobbies array in src/components/Hobbies.astro with your actual hobbies. Add images to the public/images/ folder and replace the placeholders.]</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hobby-card {
+    text-align: center;
+  }
+
+  .hobby-image {
+    height: 180px;
+    margin-bottom: 1.25rem;
+    border-radius: var(--border-radius);
+    flex-direction: column;
+  }
+
+  .hobby-image svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+
+  .hobby-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .hobby-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .placeholder-note {
+    background: var(--color-bg-alt);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    color: var(--color-text-light);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+</style>
