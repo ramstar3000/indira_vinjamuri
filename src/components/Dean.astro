@@ -16,23 +16,44 @@
         </p>
 
         <div class="dean-pillars">
-          <h3>Key Pillars</h3>
+          <h3>My 4 Pillars</h3>
           <div class="grid-2 pillar-grid">
-            <div class="pillar">
-              <h4>Education Excellence</h4>
-              <p><em>[Describe your vision for education standards and training.]</em></p>
-            </div>
-            <div class="pillar">
-              <h4>Research & Innovation</h4>
-              <p><em>[Describe your approach to fostering research and innovation.]</em></p>
-            </div>
-            <div class="pillar">
-              <h4>Diversity & Inclusion</h4>
-              <p><em>[Describe your commitment to diversity and inclusive practices.]</em></p>
-            </div>
-            <div class="pillar">
-              <h4>Workforce Development</h4>
-              <p><em>[Describe your plans for recruitment, retention, and staff development.]</em></p>
+            <button class="pillar" data-pillar="train-to-gain">
+              <span class="pillar-icon">I</span>
+              <h4>Train to Gain</h4>
+              <p>Excellence and consistency in training that lifts standards across the board</p>
+              <span class="pillar-expand">Read more</span>
+            </button>
+            <button class="pillar" data-pillar="time-to-thrive">
+              <span class="pillar-icon">II</span>
+              <h4>Time to Thrive</h4>
+              <p>Protect educator time, capacity, wellbeing and strengthen recruitment</p>
+              <span class="pillar-expand">Read more</span>
+            </button>
+            <button class="pillar" data-pillar="support-to-soar">
+              <span class="pillar-icon">III</span>
+              <h4>Support to Soar</h4>
+              <p>Back educators with tools, recognition and development</p>
+              <span class="pillar-expand">Read more</span>
+            </button>
+            <button class="pillar" data-pillar="nourish-to-flourish">
+              <span class="pillar-icon">IV</span>
+              <h4>Nourish to Flourish</h4>
+              <p>Modernise psychiatry with innovative and future-ready practice</p>
+              <span class="pillar-expand">Read more</span>
+            </button>
+          </div>
+
+          <!-- Modal overlay -->
+          <div class="pillar-modal-overlay" id="pillar-modal">
+            <div class="pillar-modal">
+              <button class="pillar-modal-close" aria-label="Close">&times;</button>
+              <span class="pillar-modal-icon" id="modal-icon"></span>
+              <h3 id="modal-title"></h3>
+              <p class="pillar-modal-subtitle" id="modal-subtitle"></p>
+              <div class="pillar-modal-body" id="modal-body">
+                <p class="placeholder-note"><em>[Details coming soon]</em></p>
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +66,7 @@
             <li>Consultant Psychiatrist</li>
             <li>Director of Medical Education, Mersey Care NHS</li>
             <li>Associate Dean, RCPsych</li>
-            <li>GA-SAC Chair, RCPsych</li>
+            <li>Former GA-SAC Chair, RCPsych</li>
           </ul>
           <p class="placeholder-note" style="margin-top: 1rem;">
             <em>[Add your full qualifications, degrees, and memberships here.]</em>
@@ -97,6 +118,28 @@
     padding: 1.25rem;
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    width: 100%;
+  }
+
+  .pillar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .pillar-icon {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
   }
 
   .pillar h4 {
@@ -109,6 +152,102 @@
   .pillar p {
     font-size: 0.9rem;
     margin-bottom: 0;
+  }
+
+  .pillar-expand {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .pillar:hover .pillar-expand {
+    text-decoration: underline;
+  }
+
+  /* Modal styles */
+  .pillar-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .pillar-modal-overlay.active {
+    display: flex;
+  }
+
+  .pillar-modal {
+    background: var(--color-bg);
+    border-radius: var(--border-radius);
+    max-width: 560px;
+    width: 100%;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: modalIn 0.25s ease;
+  }
+
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .pillar-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+  }
+
+  .pillar-modal-close:hover {
+    color: var(--color-text);
+  }
+
+  .pillar-modal-icon {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-modal h3 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-modal-subtitle {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-modal-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   .qualifications-list {
@@ -141,5 +280,52 @@
     .dean-content {
       grid-template-columns: 1fr;
     }
+
+    .pillar-modal {
+      padding: 1.75rem;
+    }
   }
 </style>
+
+<script>
+  const pillarsData = {
+    'train-to-gain': { icon: 'I', title: 'Train to Gain', subtitle: 'Excellence and consistency in training that lifts standards across the board' },
+    'time-to-thrive': { icon: 'II', title: 'Time to Thrive', subtitle: 'Protect educator time, capacity, wellbeing and strengthen recruitment' },
+    'support-to-soar': { icon: 'III', title: 'Support to Soar', subtitle: 'Back educators with tools, recognition and development' },
+    'nourish-to-flourish': { icon: 'IV', title: 'Nourish to Flourish', subtitle: 'Modernise psychiatry with innovative and future-ready practice' },
+  };
+
+  const modal = document.getElementById('pillar-modal');
+  const modalIcon = document.getElementById('modal-icon');
+  const modalTitle = document.getElementById('modal-title');
+  const modalSubtitle = document.getElementById('modal-subtitle');
+
+  function openModal(pillarKey) {
+    const data = pillarsData[pillarKey];
+    if (!data) return;
+    modalIcon.textContent = data.icon;
+    modalTitle.textContent = data.title;
+    modalSubtitle.textContent = data.subtitle;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.pillar[data-pillar]').forEach((btn) => {
+    btn.addEventListener('click', () => openModal(btn.dataset.pillar));
+  });
+
+  modal.querySelector('.pillar-modal-close').addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
