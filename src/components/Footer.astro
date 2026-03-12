@@ -1,0 +1,52 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-name">Dr. Indira Vinjamuri</p>
+    <p class="footer-copy">&copy; {currentYear} All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/indira-vinjamuri-0b629315a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      <a href="https://x.com/IVinjamuri" target="_blank" rel="noopener noreferrer" aria-label="Twitter">X / Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    transition: color var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent-light);
+  }
+</style>
