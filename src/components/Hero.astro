@@ -16,15 +16,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="image-placeholder hero-photo">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0" />
-          </svg>
-          <p>Add your photo here</p>
-          <p><small>Replace this with an image tag<br/>pointing to /images/profile.jpg</small></p>
-        </div>
-      </div>
+      <img class="hero-photo" src={`${import.meta.env.BASE_URL}images/profile.jpg`} alt="Dr. Indira Vinjamuri" />
     </div>
   </div>
 </section>
@@ -81,7 +73,8 @@
     max-width: 380px;
     margin-left: auto;
     border-radius: 12px;
-    flex-direction: column;
+    object-fit: cover;
+    object-position: 20% top;
   }
 
   @media (max-width: 768px) {
