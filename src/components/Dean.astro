@@ -13,7 +13,7 @@
         <h3>Statement of Purpose</h3>
 
         <div class="dean-pillars">
-          <h3>My 4 Pillars</h3>
+          <h3>My Four Pillars as Dean</h3>
           <div class="grid-2 pillar-grid">
             <button class="pillar" data-pillar="train-to-gain">
               <span class="pillar-icon">I</span>
@@ -174,6 +174,8 @@
     border-radius: var(--border-radius);
     max-width: 560px;
     width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
     padding: 2.5rem;
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
@@ -236,6 +238,20 @@
     line-height: 1.7;
   }
 
+  .pillar-modal-body ul {
+    padding-left: 1.25rem;
+    margin: 0.75rem 0 0;
+  }
+
+  .pillar-modal-body li {
+    margin-bottom: 0.6rem;
+    color: var(--color-text-light);
+  }
+
+  .pillar-modal-body p {
+    margin-bottom: 0.5rem;
+  }
+
   .qualifications-list {
     list-style: none;
     padding: 0;
@@ -275,10 +291,61 @@
 
 <script>
   const pillarsData = {
-    'train-to-gain': { icon: 'I', title: 'Train to Gain', subtitle: 'Excellence and consistency in training that lifts standards across the board' },
-    'time-to-thrive': { icon: 'II', title: 'Time to Thrive', subtitle: 'Protect educator time, capacity, wellbeing and strengthen recruitment' },
-    'support-to-soar': { icon: 'III', title: 'Support to Soar', subtitle: 'Back educators with tools, recognition and development' },
-    'nourish-to-flourish': { icon: 'IV', title: 'Nourish to Flourish', subtitle: 'Modernise psychiatry with innovative and future-ready practice' },
+    'train-to-gain': {
+      icon: 'I',
+      title: 'Train to Gain',
+      subtitle: 'Excellence & Consistency in Training',
+      body: `<p>Every resident doctor, wherever they train, deserves fair, high-quality education.</p>
+        <p><strong>I will deliver:</strong></p>
+        <ul>
+          <li>A nationally standardised MRCPsych course with consistent expectations — I have been working with MRCPsych leads across the 4 nations to standardise learning and develop exam support.</li>
+          <li>Clearer support and structure for supervisors and tutors, to deliver training fit for purpose and understand curricular requirements.</li>
+          <li>Integration of neuroscience and psychological formulation as a connected continuum, by improving teaching and supervision structures.</li>
+          <li>Equal access to teaching, placements and development for LTFT, rural/remote and IMG resident doctors — I have written a proposal for rural/remote run-through training.</li>
+        </ul>`
+    },
+    'time-to-thrive': {
+      icon: 'II',
+      title: 'Time to Thrive',
+      subtitle: 'Protecting Time, Capacity & Consultant Wellbeing',
+      body: `<p>Our trainers are the backbone of psychiatry. Their contribution must be recognised, protected and appreciated.</p>
+        <p><strong>I will champion:</strong></p>
+        <ul>
+          <li>The RCPsych Bridge Programme, supporting the transition from resident doctor to consultant (see proposal paper).</li>
+          <li>Clear expectations for educational roles, with protected time in job plans that allows and promotes training.</li>
+          <li>Stronger boundaries between educational oversight and Trust processes, strengthening recruitment — including developing flexible job plans, adapting dual training to lead to dual clinical practice, e.g. protected sessions for consultants to practice therapy alongside or dual specialty posts.</li>
+          <li>Practical steps to reduce burnout and improve consultant wellbeing, and help people understand and engage with the College.</li>
+        </ul>`
+    },
+    'support-to-soar': {
+      icon: 'III',
+      title: 'Support to Soar',
+      subtitle: 'Supporting Educators & SAS Doctors Through a Clear College-Led Pathway',
+      body: `<p>We must support those who support our resident doctors.</p>
+        <p><strong>I will introduce:</strong></p>
+        <ul>
+          <li>A structured Educator Development Pathway, acknowledged and appreciated in job plans and appraisals.</li>
+          <li>Standardised, competency-based training for supervisors, TPDs, tutors and Heads of School, spanning across Foundation, GP and Psychiatry training.</li>
+          <li>Enhanced career development and recognition for SAS doctors — train them to train.</li>
+          <li>CPD-accredited modules to understand and develop education, and a College-approved educator status.</li>
+          <li>Support the wellbeing of residents and trainers.</li>
+        </ul>`
+    },
+    'nourish-to-flourish': {
+      icon: 'IV',
+      title: 'Nourish to Flourish',
+      subtitle: 'Modernising Psychiatry for the Future',
+      body: `<p>Our training must evolve with the changing landscape of mental health.</p>
+        <p><strong>I will promote:</strong></p>
+        <ul>
+          <li>Quality recruitment in Psychiatry and work on job satisfaction and retention.</li>
+          <li>Digital psychiatry, academic psychiatry, simulation and AI-enabled learning — this becomes a must in our lives.</li>
+          <li>A holistic model integrating neuroscience, psychological formulation and social determinants, and establish multi-disciplinary team working.</li>
+          <li>Training aligned with community transformation and new service models — prepare residents for change management.</li>
+          <li>Leadership and management development for residents and early-career consultants, to prevent burnout.</li>
+          <li>Academic support and opportunities for experienced consultants who can contribute to the profession.</li>
+        </ul>`
+    },
   };
 
   const modal = document.getElementById('pillar-modal');
@@ -286,12 +353,15 @@
   const modalTitle = document.getElementById('modal-title');
   const modalSubtitle = document.getElementById('modal-subtitle');
 
+  const modalBody = document.getElementById('modal-body');
+
   function openModal(pillarKey) {
     const data = pillarsData[pillarKey];
     if (!data) return;
     modalIcon.textContent = data.icon;
     modalTitle.textContent = data.title;
     modalSubtitle.textContent = data.subtitle;
+    modalBody.innerHTML = data.body;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
