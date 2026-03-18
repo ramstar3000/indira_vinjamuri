@@ -7,7 +7,8 @@
       "WebFetch(domain:academic.oup.com)",
       "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
       "WebFetch(domain:www.rcpsych.ac.uk)",
-      "WebFetch(domain:www.england.nhs.uk)"
+      "WebFetch(domain:www.england.nhs.uk)",
+      "Bash(npm run:*)"
     ]
   }
 }

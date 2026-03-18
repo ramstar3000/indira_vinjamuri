@@ -1,4 +1,73 @@
 ---
+const base = import.meta.env.BASE_URL;
+
+const pillarsData = [
+  {
+    key: 'train-to-gain',
+    icon: 'I',
+    title: 'Train to Gain',
+    summary: 'Excellence and consistency in training that lifts standards across the board',
+    subtitle: 'Excellence & Consistency in Training',
+    body: `<p>Every resident doctor, wherever they train, deserves fair, high-quality education.</p>
+      <p><strong>I will deliver on the following:</strong></p>
+      <ul>
+        <li>Recruitment and retention in psychiatry are current necessary areas. I am already working on Phase 2 of the medical training review and will continue to deliver the best we can.</li>
+        <li>A nationally standardised MRCPsych course with consistent expectations. I have been trying to work with MRCPsych leads across the 4 nations to standardise learning and develop exam support.</li>
+        <li>Clearer support and structure for supervisors and tutors, to deliver training fit for purpose and understand curricular requirements. I have been working on the College supervision guidance document to make it fit for purpose.</li>
+        <li>Integration of neuroscience and psychological formulation as a connected continuum, by improving teaching and supervision structures.</li>
+        <li>Equal access to teaching, placements and development for LTFT, rural/remote and IMG resident doctors. I am part of College working groups, and I have written a <a href="${base}/documents/rural-remote-proposal.pdf" target="_blank">proposal for rural/remote run-through training</a>.</li>
+      </ul>`,
+  },
+  {
+    key: 'time-to-thrive',
+    icon: 'II',
+    title: 'Time to Thrive',
+    summary: 'Protect educator time, capacity, wellbeing and strengthen recruitment',
+    subtitle: 'Protecting Time, Capacity & Consultant Wellbeing',
+    body: `<p>Our trainers are the backbone of psychiatry. Their contribution must be recognised, protected and appreciated.</p>
+      <p><strong>I will champion:</strong></p>
+      <ul>
+        <li>The <a href="${base}/documents/rcpsych-bridge-programme.pdf" target="_blank">RCPsych Bridge Programme</a>, supporting the transition from resident doctor to consultant.</li>
+        <li>Setting clear expectations for educational roles, with protected time in job plans that allows and promotes training. I am working with the College in understanding this better.</li>
+        <li>Stronger boundaries between educational oversight and Trust processes, strengthening recruitment, including developing flexible job plans, adapting dual training to lead to dual clinical practice, e.g. protected sessions for consultants to practice therapy alongside or dual specialty posts.</li>
+        <li>Practical steps to reduce burnout and improve consultant wellbeing, and help people understand and engage with the College.</li>
+        <li>An opportunity for established consultants with experience and wisdom to contribute to academia. I am writing a <a href="${base}/documents/academia-for-consultants.pdf" target="_blank">proposal paper</a> to sit with the Academic strategy from the College.</li>
+      </ul>`,
+  },
+  {
+    key: 'support-to-soar',
+    icon: 'III',
+    title: 'Support to Soar',
+    summary: 'Back educators with tools, recognition and development',
+    subtitle: 'Supporting Educators & SAS Doctors Through a Clear College-Led Pathway',
+    body: `<p>We must support those who support our resident doctors.</p>
+      <p><strong>I will introduce:</strong></p>
+      <ul>
+        <li>A structured Educator Development Pathway, acknowledged and appreciated in job plans and appraisals.</li>
+        <li>Standardised, competency-based training for supervisors, TPDs, tutors and Heads of School, spanning across Foundation, GP and Psychiatry training.</li>
+        <li>Enhanced career development and recognition for SAS doctors, train them to train. Work on enhanced portfolio pathways for LED doctors. I am in conversation with portfolio providers regarding this.</li>
+        <li>CPD-accredited modules to understand and develop education, and a College-approved educator status.</li>
+        <li>Support the wellbeing of residents and trainers and identify local, regional and national pathways for this.</li>
+      </ul>`,
+  },
+  {
+    key: 'nourish-to-flourish',
+    icon: 'IV',
+    title: 'Nourish to Flourish',
+    summary: 'Modernise psychiatry with innovative and future-ready practice',
+    subtitle: 'Modernising Psychiatry for the Future',
+    body: `<p>Our training must evolve with the changing landscape of mental health.</p>
+      <p><strong>I will promote:</strong></p>
+      <ul>
+        <li>Quality recruitment in Psychiatry and work on job satisfaction and retention.</li>
+        <li>Digital psychiatry, academic psychiatry, simulation and AI-enabled learning. This becomes a must in our lives. I will aim to bring in regional, national and international expertise to enhance our local learning.</li>
+        <li>A holistic model integrating neuroscience, psychological formulation and social determinants, and establish multi-disciplinary team working. I have worked on the PA guidance and MPAC committees.</li>
+        <li>Training aligned with community transformation and new service models. Prepare residents for change management. I have been part of GA faculty and participated in preparing for change for years.</li>
+        <li>Leadership and management development for residents and early-career consultants, to prevent burnout.</li>
+        <li>Academic support and opportunities for experienced consultants who can contribute to the profession.</li>
+      </ul>`,
+  },
+];
 ---
 
 <section id="dean">
@@ -14,43 +83,27 @@
 
         <div class="dean-pillars">
           <h3>My Four Pillars as Dean</h3>
-          <div class="grid-2 pillar-grid">
-            <button class="pillar" data-pillar="train-to-gain">
-              <span class="pillar-icon">I</span>
-              <h4>Train to Gain</h4>
-              <p>Excellence and consistency in training that lifts standards across the board</p>
-              <span class="pillar-expand">Read more</span>
-            </button>
-            <button class="pillar" data-pillar="time-to-thrive">
-              <span class="pillar-icon">II</span>
-              <h4>Time to Thrive</h4>
-              <p>Protect educator time, capacity, wellbeing and strengthen recruitment</p>
-              <span class="pillar-expand">Read more</span>
-            </button>
-            <button class="pillar" data-pillar="support-to-soar">
-              <span class="pillar-icon">III</span>
-              <h4>Support to Soar</h4>
-              <p>Back educators with tools, recognition and development</p>
-              <span class="pillar-expand">Read more</span>
-            </button>
-            <button class="pillar" data-pillar="nourish-to-flourish">
-              <span class="pillar-icon">IV</span>
-              <h4>Nourish to Flourish</h4>
-              <p>Modernise psychiatry with innovative and future-ready practice</p>
-              <span class="pillar-expand">Read more</span>
-            </button>
-          </div>
-
-          <!-- Modal overlay -->
-          <div class="pillar-modal-overlay" id="pillar-modal">
-            <div class="pillar-modal">
-              <button class="pillar-modal-close" aria-label="Close">&times;</button>
-              <span class="pillar-modal-icon" id="modal-icon"></span>
-              <h3 id="modal-title"></h3>
-              <p class="pillar-modal-subtitle" id="modal-subtitle"></p>
-              <div class="pillar-modal-body" id="modal-body">
+          <div class="pillar-list">
+            {pillarsData.map((pillar) => (
+              <div class="pillar-item" data-pillar={pillar.key}>
+                <button class="pillar" aria-expanded="false">
+                  <div class="pillar-header">
+                    <span class="pillar-icon">{pillar.icon}</span>
+                    <div class="pillar-title-group">
+                      <h4>{pillar.title}</h4>
+                      <p>{pillar.summary}</p>
+                    </div>
+                    <span class="pillar-chevron" aria-hidden="true"></span>
+                  </div>
+                </button>
+                <div class="pillar-detail">
+                  <div class="pillar-detail-inner">
+                    <p class="pillar-subtitle">{pillar.subtitle}</p>
+                    <div class="pillar-body" set:html={pillar.body} />
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -69,7 +122,6 @@
             <li>AOMRC Member</li>
           </ul>
         </div>
-
       </aside>
     </div>
   </div>
@@ -87,29 +139,25 @@
     margin-bottom: 1rem;
   }
 
-  .placeholder-note {
-    background: var(--color-bg-alt);
-    border-left: 3px solid var(--color-accent);
-    padding: 1rem 1.25rem;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    color: var(--color-text-light);
-  }
-
   .dean-pillars {
     margin-top: 2rem;
   }
 
-  .pillar-grid {
+  .pillar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-top: 1rem;
   }
 
+  /* Pillar button */
   .pillar {
     background: var(--color-bg-alt);
-    padding: 1.25rem;
+    padding: 1.75rem;
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
     text-align: left;
     font-family: inherit;
     font-size: inherit;
@@ -118,155 +166,122 @@
   }
 
   .pillar:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .pillar-item.active .pillar {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .pillar-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .pillar-icon {
-    display: block;
+    flex-shrink: 0;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
     letter-spacing: 0.05em;
+    width: 2.5rem;
+    text-align: center;
   }
 
-  .pillar h4 {
+  .pillar-title-group {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pillar-title-group h4 {
     font-family: var(--font-heading);
     color: var(--color-accent);
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    font-size: 1.15rem;
   }
 
-  .pillar p {
-    font-size: 0.9rem;
+  .pillar-title-group p {
+    font-size: 0.92rem;
     margin-bottom: 0;
-  }
-
-  .pillar-expand {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    letter-spacing: 0.03em;
-  }
-
-  .pillar:hover .pillar-expand {
-    text-decoration: underline;
-  }
-
-  /* Modal styles */
-  .pillar-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-  }
-
-  .pillar-modal-overlay.active {
-    display: flex;
-  }
-
-  .pillar-modal {
-    background: var(--color-bg);
-    border-radius: var(--border-radius);
-    max-width: 560px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 2.5rem;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    animation: modalIn 0.25s ease;
-  }
-
-  @keyframes modalIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px) scale(0.97);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .pillar-modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.25rem;
-    background: none;
-    border: none;
-    font-size: 1.75rem;
-    cursor: pointer;
+    line-height: 1.4;
     color: var(--color-text-light);
-    line-height: 1;
-    padding: 0;
-    transition: color 0.2s;
   }
 
-  .pillar-modal-close:hover {
-    color: var(--color-text);
+  /* Chevron */
+  .pillar-chevron {
+    flex-shrink: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-right: 2px solid var(--color-text-light);
+    border-bottom: 2px solid var(--color-text-light);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem;
   }
 
-  .pillar-modal-icon {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
+  .pillar-item.active .pillar-chevron {
+    transform: rotate(-135deg);
   }
 
-  .pillar-modal h3 {
-    font-family: var(--font-heading);
-    color: var(--color-accent);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  /* Expandable detail panel */
+  .pillar-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
   }
 
-  .pillar-modal-subtitle {
+  .pillar-item.active .pillar-detail {
+    grid-template-rows: 1fr;
+  }
+
+  .pillar-detail-inner {
+    overflow: hidden;
+  }
+
+  .pillar-subtitle {
     color: var(--color-text-light);
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    padding-top: 1.25rem;
   }
 
-  .pillar-modal-body {
+  .pillar-body {
     font-size: 0.95rem;
     line-height: 1.7;
+    padding-bottom: 0.5rem;
   }
 
-  .pillar-modal-body ul {
+  .pillar-body ul {
     padding-left: 1.25rem;
     margin: 0.75rem 0 0;
   }
 
-  .pillar-modal-body li {
+  .pillar-body li {
     margin-bottom: 0.6rem;
     color: var(--color-text-light);
   }
 
-  .pillar-modal-body a {
+  .pillar-body a {
     color: var(--color-accent);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
-  .pillar-modal-body a:hover {
+  .pillar-body a:hover {
     color: var(--color-primary);
   }
 
-  .pillar-modal-body p {
+  .pillar-body p {
     margin-bottom: 0.5rem;
   }
 
+  /* Qualifications sidebar */
   .qualifications-list {
     list-style: none;
     padding: 0;
@@ -282,7 +297,7 @@
   }
 
   .qualifications-list li::before {
-    content: '✓';
+    content: '\2713';
     position: absolute;
     left: 0;
     color: var(--color-accent);
@@ -297,109 +312,37 @@
     .dean-content {
       grid-template-columns: 1fr;
     }
-
-    .pillar-modal {
-      padding: 1.75rem;
-    }
   }
 </style>
 
 <script>
-  const base = '/indira_vinjamuri';
-  const pillarsData = {
-    'train-to-gain': {
-      icon: 'I',
-      title: 'Train to Gain',
-      subtitle: 'Excellence & Consistency in Training',
-      body: `<p>Every resident doctor, wherever they train, deserves fair, high-quality education.</p>
-        <p><strong>I will deliver on the following:</strong></p>
-        <ul>
-          <li>Recruitment and retention in psychiatry are current necessary areas — I am already working on Phase 2 of the medical training review and will continue to deliver the best we can.</li>
-          <li>A nationally standardised MRCPsych course with consistent expectations — I have been trying to work with MRCPsych leads across the 4 nations to standardise learning and develop exam support.</li>
-          <li>Clearer support and structure for supervisors and tutors, to deliver training fit for purpose and understand curricular requirements — I have been working on the College supervision guidance document to make it fit for purpose.</li>
-          <li>Integration of neuroscience and psychological formulation as a connected continuum, by improving teaching and supervision structures.</li>
-          <li>Equal access to teaching, placements and development for LTFT, rural/remote and IMG resident doctors — I am part of College working groups, and I have written a <a href="${base}/documents/rural-remote-proposal.pdf" target="_blank">proposal for rural/remote run-through training</a>.</li>
-        </ul>`
-    },
-    'time-to-thrive': {
-      icon: 'II',
-      title: 'Time to Thrive',
-      subtitle: 'Protecting Time, Capacity & Consultant Wellbeing',
-      body: `<p>Our trainers are the backbone of psychiatry. Their contribution must be recognised, protected and appreciated.</p>
-        <p><strong>I will champion:</strong></p>
-        <ul>
-          <li>The <a href="${base}/documents/rcpsych-bridge-programme.pdf" target="_blank">RCPsych Bridge Programme</a>, supporting the transition from resident doctor to consultant.</li>
-          <li>Setting clear expectations for educational roles, with protected time in job plans that allows and promotes training — I am working with the College in understanding this better.</li>
-          <li>Stronger boundaries between educational oversight and Trust processes, strengthening recruitment — including developing flexible job plans, adapting dual training to lead to dual clinical practice, e.g. protected sessions for consultants to practice therapy alongside or dual specialty posts.</li>
-          <li>Practical steps to reduce burnout and improve consultant wellbeing, and help people understand and engage with the College.</li>
-          <li>An opportunity for established consultants with experience and wisdom to contribute to academia — I am writing a <a href="${base}/documents/academia-for-consultants.pdf" target="_blank">proposal paper</a> to sit with the Academic strategy from the College.</li>
-        </ul>`
-    },
-    'support-to-soar': {
-      icon: 'III',
-      title: 'Support to Soar',
-      subtitle: 'Supporting Educators & SAS Doctors Through a Clear College-Led Pathway',
-      body: `<p>We must support those who support our resident doctors.</p>
-        <p><strong>I will introduce:</strong></p>
-        <ul>
-          <li>A structured Educator Development Pathway, acknowledged and appreciated in job plans and appraisals.</li>
-          <li>Standardised, competency-based training for supervisors, TPDs, tutors and Heads of School, spanning across Foundation, GP and Psychiatry training.</li>
-          <li>Enhanced career development and recognition for SAS doctors — train them to train. Work on enhanced portfolio pathways for LED doctors — I am in conversation with portfolio providers regarding this.</li>
-          <li>CPD-accredited modules to understand and develop education, and a College-approved educator status.</li>
-          <li>Support the wellbeing of residents and trainers and identify local, regional and national pathways for this.</li>
-        </ul>`
-    },
-    'nourish-to-flourish': {
-      icon: 'IV',
-      title: 'Nourish to Flourish',
-      subtitle: 'Modernising Psychiatry for the Future',
-      body: `<p>Our training must evolve with the changing landscape of mental health.</p>
-        <p><strong>I will promote:</strong></p>
-        <ul>
-          <li>Quality recruitment in Psychiatry and work on job satisfaction and retention.</li>
-          <li>Digital psychiatry, academic psychiatry, simulation and AI-enabled learning — this becomes a must in our lives. I will aim to bring in regional, national and international expertise to enhance our local learning.</li>
-          <li>A holistic model integrating neuroscience, psychological formulation and social determinants, and establish multi-disciplinary team working. I have worked on the PA guidance and MPAC committees.</li>
-          <li>Training aligned with community transformation and new service models — prepare residents for change management. I have been part of GA faculty and participated in preparing for change for years.</li>
-          <li>Leadership and management development for residents and early-career consultants, to prevent burnout.</li>
-          <li>Academic support and opportunities for experienced consultants who can contribute to the profession.</li>
-        </ul>`
-    },
-  };
+  document.querySelectorAll('.pillar-item').forEach((item) => {
+    const btn = item.querySelector('.pillar');
 
-  const modal = document.getElementById('pillar-modal');
-  const modalIcon = document.getElementById('modal-icon');
-  const modalTitle = document.getElementById('modal-title');
-  const modalSubtitle = document.getElementById('modal-subtitle');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
 
-  const modalBody = document.getElementById('modal-body');
+      // Close all pillars
+      document.querySelectorAll('.pillar-item.active').forEach((open) => {
+        open.classList.remove('active');
+        open.querySelector('.pillar').setAttribute('aria-expanded', 'false');
+      });
 
-  function openModal(pillarKey) {
-    const data = pillarsData[pillarKey];
-    if (!data) return;
-    modalIcon.textContent = data.icon;
-    modalTitle.textContent = data.title;
-    modalSubtitle.textContent = data.subtitle;
-    modalBody.innerHTML = data.body;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.pillar[data-pillar]').forEach((btn) => {
-    btn.addEventListener('click', () => openModal(btn.dataset.pillar));
+      // If it wasn't already open, open it
+      if (!isOpen) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 
-  modal.querySelector('.pillar-modal-close').addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+  // Click anywhere outside a pillar to close
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.pillar-item')) {
+      document.querySelectorAll('.pillar-item.active').forEach((open) => {
+        open.classList.remove('active');
+        open.querySelector('.pillar').setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 </script>
